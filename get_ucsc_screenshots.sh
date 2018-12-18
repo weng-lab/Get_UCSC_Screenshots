@@ -2,7 +2,7 @@
 
 # Author: Qin Wang
 # Usage ucsc_screenshots.sh hublink bed_file outpath
-# Usage ucsc_screenshots.sh https://***/hub.txt narrowPeak.bed /home/***/***
+# Usage ucsc_screenshots.sh https://***/hub.txt Peak.bed Your_outpath
 # hublink is what you put into the UCSC browser(the hub.txt contains all the tracks you have loaded)
 #example:
 #https://genome.ucsc.edu/cgi-bin/hgTracks?db=mm10&position=chr8:126820533-126833569&hubClear=https://users.wenglab.org/***/***/***/hub.txt
