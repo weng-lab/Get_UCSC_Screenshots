@@ -23,10 +23,10 @@ for i in "${ranges[@]}"; do
     ### using the 4th column to name pdf files
     outpdf=${outpath}"/"$(echo $i | cut -d. -f2).pdf
     #https://genome.ucsc.edu/cgi-bin/hgTracks?db=mm10&position=chr8:126820533-126833569&hubClear=https://users.wenglab.org/***/***/***/hub.txt
-    curl -s "https://genome.ucsc.edu/cgi-bin/hgTracks?db=$db&position=$position&hubClear=$hublink" >/dev/null
+    #curl -s "https://genome.ucsc.edu/cgi-bin/hgTracks?db=$db&position=$position&hubClear=$hublink" >/dev/null
     #https://genome.ucsc.edu/cgi-bin/hgTracks?db=mm10&position=chr8:126820533-126833569&hubClear=https://users.wenglab.org/***/***/***/hub.txt&hgt.psOutput=on
     pdf_page="https://genome.ucsc.edu/cgi-bin/hgTracks?db=$db&position=$position&hubClear=$hublink&hgt.psOutput=on"
-    pdf_url=$(curl -s "$dl_page" | grep "the current browser graphic in PDF" | grep -E -o "\".+\"" | tr -d "\"" | sed 's/../https:\/\/genome.ucsc.edu/')
+    pdf_url=$(curl -s "$pdf_page" | grep "the current browser graphic in PDF" | grep -E -o "\".+\"" | tr -d "\"" | sed 's/../https:\/\/genome.ucsc.edu/')
 
     echo "Saving $outpdf from $pdf_url"
     curl -s -o ${outpdf} "$pdf_url"
